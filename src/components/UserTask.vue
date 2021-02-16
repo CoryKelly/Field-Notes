@@ -17,7 +17,7 @@
                 <v-card-title class="white--text headline green lighten-0">{{ task.title }}</v-card-title>
                 <v-img
                     height="200px"
-                    src=""
+                    src="https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 >
                 </v-img>
                 <div class="text-left pa-4">

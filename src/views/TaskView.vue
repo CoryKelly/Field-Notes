@@ -2,9 +2,9 @@
   <div>
     <v-container>
       <v-row justify="center">
-        <v-card width="1200" flat rounded class="pa-6">
+        <v-card width="1400" flat rounded class="pa-6 mt-10">
           <v-row justify="center" class="text-center">
-            <v-col md="12" sm="12">
+            <v-col sm="12">
               <UserForm/>
             </v-col>
           </v-row>

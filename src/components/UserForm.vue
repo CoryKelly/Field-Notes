@@ -3,6 +3,7 @@
       <v-col style="padding-left: 0;padding-top: 0; padding-bottom: 0;" cols="4">
         <v-img
             height="100%"
+            max-width="300px"
             src="https://freshexchange.com/assets/Monday_Words_01-5.jpg"
         >
         </v-img>
@@ -138,7 +139,7 @@
             </v-col>
           </v-row>
 
-          <v-row>
+          <v-row class="mb-0">
             <v-col>
               <!-- USER NOTES -->
               <v-textarea
@@ -152,6 +153,20 @@
             </v-col>
           </v-row>
 
+          <!-- FILE UPLOAD -->
+          <v-row>
+            <v-col v-if="url" class="preview">
+              <img :src="url"  alt=""/>
+            </v-col>
+            <v-col>
+              <v-file-input
+                  v-model="imageUpload"
+                  @change="capturedImage"
+                  accept="image/*"
+                  label="Choose an image"
+              ></v-file-input>
+            </v-col>
+          </v-row>
 
           <v-row justify="end">
             <v-col cols="5">
@@ -174,6 +189,11 @@
 .v-select__selections {
 min-height: 42px!important;
 }
+
+.preview img {
+  max-width: 300px;
+  max-height: 300px;
+}
 </style>
 
 
@@ -191,8 +211,11 @@ export default {
   data() {
     return {
       date: new Date().toISOString().substr(0, 10),
+      imageUpload: [],
+      url: '',
       title: '',
       notes: '',
+      selectedPhoto: null,
       selectedTask: null,
       selectedProduct: null,
       selectedZone: [],
@@ -245,8 +268,13 @@ export default {
         zone: this.selectedZone,
         mowHeight: this.selectedMowHeight,
         date: this.date,
+        photo: this.selectedPhoto
       });
       this.clear()
+    },
+    capturedImage(file) {
+      this.selectedPhoto = file
+      this.url = URL.createObjectURL(file)
     },
     clear () {
       this.$v.$reset()
@@ -258,6 +286,8 @@ export default {
       this.product = ''
       this.amount = ''
       this.selectedMowHeight = null
+      this.url = ''
+      this.selectedPhoto = null
     },
   },
 }

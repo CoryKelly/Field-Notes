@@ -1,13 +1,15 @@
 <template>
   <div>
     <v-container>
-      <v-card flat rounded class="pa-6">
-        <v-row justify="center" class="text-center">
-          <v-col sm="12">
-            <UserForm/>
-          </v-col>
-        </v-row>
-      </v-card>
+      <v-row justify="center">
+        <v-card width="1200" flat rounded class="pa-6">
+          <v-row justify="center" class="text-center">
+            <v-col md="12" sm="12">
+              <UserForm/>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-row>
     </v-container>
   </div>
 </template>

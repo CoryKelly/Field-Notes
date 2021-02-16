@@ -13,11 +13,11 @@
             ></span>
           </template>
 
-              <v-card max-width="400">
+              <v-card>
                 <v-card-title class="white--text headline green lighten-0">{{ task.title }}</v-card-title>
                 <v-img
                     height="200px"
-                    src="https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    src=""
                 >
                 </v-img>
                 <div class="text-left pa-4">
@@ -58,6 +58,7 @@ export default {
   name: "UserPost",
   data() {
     return {
+      url: null,
       loading: false,
     }
   },

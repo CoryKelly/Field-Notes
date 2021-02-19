@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/tasks',
     name: 'TimelineView',
     component: TimelineView
   },
@@ -18,7 +18,7 @@ const routes = [
     component: CalculationsView
   },
   {
-    path: '/task',
+    path: '/post',
     name: 'TaskView',
     component: TaskView
   }

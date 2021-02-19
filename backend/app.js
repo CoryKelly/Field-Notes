@@ -1,4 +1,5 @@
 const express = require('express')
+const { expressCspHeader } = require('express-csp-header');
 const cors = require('cors')
 const app = express()
 const morgan = require('morgan')
@@ -9,16 +10,20 @@ require('dotenv').config()
 const port = process.env.PORT || 3000
 
 // Routes
-const tasksRoutes = require('./api/routes/tasks')
 const postRoutes = require('./api/routes/post')
 
 
 // Middleware
 app.use(morgan('dev'))
+app.use(expressCspHeader({
+  directives: {
+    'img-src': ['static', 'localhost:3000']
+  }
+}));
+app.use(express.static('static'))
 app.use(urlencoded({extended: false}))
 app.use(json())
 app.use(cors())
-app.use('/tasks', tasksRoutes)
 app.use('/post', postRoutes)
 
 app.use((req, res, next) => {

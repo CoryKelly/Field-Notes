@@ -6,11 +6,11 @@ const postSchema = new Schema({
   notes: String,
   task: { type: String, required: true },
   product: String,
-  amount: Number,
+  amount: String,
   units: String,
-  zone: String,
-  mowHeight: Number,
-  date: { type: Date, default: Date.now, required: true },
+  zone: [String],
+  mowHeight: String,
+  date: String,
   photo: { type: String, required: true }
 })
 

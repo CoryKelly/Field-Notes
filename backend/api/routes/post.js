@@ -23,19 +23,61 @@ const Post = require('../models/post')
 
 // GET ALL POST
 router.get('/', (req, res) => {
-  Post.find().select('title notes _id photo').exec().then(result => {
-
+  Post.find().select('_id title notes task product amount units mowHeight date photo zone').exec().then(result => {
     const response = {
       count: result.length,
       post: result
     }
-
     res.status(200).json(response)
   }).catch(err => {
     console.log(err)
     res.status(500).json({
       error: err
     })
+  })
+})
+
+// POST NEW POST
+router.post('/createPost', upload.single('photo') , (req, res) => {
+  const post = new Post({
+    _id: new Types.ObjectId(),
+    title: req.body.title,
+    notes: req.body.notes,
+    task: req.body.task,
+    product: req.body.product,
+    amount: req.body.amount,
+    units: req.body.units,
+    zone: req.body.zone,
+    mowHeight: req.body.mowHeight,
+    date: req.body.date,
+    photo: req.file.path
+  })
+
+  // Save Post
+  post.save().then( result => {
+    const { _id, title, notes, task, product, amount, units, mowHeight, date, photo, zone } = result;
+    res.status(201).json({
+        title, notes, task, photo, _id, product, amount, units, mowHeight, date, zone
+      })
+  }).catch((err) => {
+    consola.error(`Unable to save post to DB ${err}`)
+  })
+})
+
+// GET POST BY ID
+router.get('/:postId', (req, res) => {
+  const { postId: id } = req.params;
+  Post.findById(id).select('_id title notes task product amount units mowHeight date photo zone').exec().then(result => {
+    if(result) {
+      res.status(201).json({
+        post: result
+      })
+    } else {
+      res.status(400).json({message: 'No valid entry found for provided ID' })
+    }
+  }).catch(err => {
+    console.log(err)
+    res.status(500).json({error: err})
   })
 })
 
@@ -50,50 +92,6 @@ router.patch('/:postId', (req, res) => {
     res.status(500).json({
       error: err
     })
-  })
-})
-
-
-// POST NEW POST
-router.post('/', upload.single('photo') , (req, res) => {
-  const post = new Post({
-    _id: new Types.ObjectId(),
-    title: req.body.title,
-    task: req.body.task,
-    notes: req.body.notes,
-    photo: req.file.path
-  })
-
-  // Save Post
-  post.save().then( result => {
-    const {notes, _id, title, task, photo} = result;
-    res.status(201).json({
-        message: 'Created Post successfully',
-        title,
-        notes,
-        task,
-        photo,
-        id: _id
-      })
-  }).catch((err) => {
-    consola.error(`Unable to save post to DB ${err}`)
-  })
-})
-
-// GET POST BY ID
-router.get('/:postId', (req, res) => {
-  const { postId: id } = req.params;
-  Post.findById(id).select('title notes _id photo').exec().then(result => {
-    if(result) {
-      res.status(201).json({
-        post: result
-      })
-    } else {
-      res.status(400).json({message: 'No valid entry found for provided ID' })
-    }
-  }).catch(err => {
-    console.log(err)
-    res.status(500).json({error: err})
   })
 })
 

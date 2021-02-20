@@ -24,7 +24,7 @@ app.use(express.static('static'))
 app.use(urlencoded({extended: false}))
 app.use(json())
 app.use(cors())
-app.use('/post', postRoutes)
+app.use('/posts', postRoutes)
 
 app.use((req, res, next) => {
   const error = new Error('Not found')

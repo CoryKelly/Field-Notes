@@ -8,20 +8,20 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/tasks',
+    path: '/posts',
     name: 'TimelineView',
     component: TimelineView
+  },
+  {
+    path: '/posts/createPost',
+    name: 'TaskView',
+    component: TaskView
   },
   {
     path: '/calculations',
     name: 'CalculationsView',
     component: CalculationsView
   },
-  {
-    path: '/post',
-    name: 'TaskView',
-    component: TaskView
-  }
 ]
 
 const router = new VueRouter({

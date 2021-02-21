@@ -1,39 +1,39 @@
 <template>
       <v-timeline :dense="$vuetify.breakpoint.smAndDown">
         <v-timeline-item
-            v-for="task in allTasks"
-            :key="task"
+            v-for="post in allPots"
+            :key="post._id"
             color="green"
-            :icon="task.icon"
+            :icon="post.icon"
         >
           <template v-slot:opposite>
             <span
                 :class="`headline font-weight-bold grey--text`"
-                v-text="task.date"
+                v-text="post.date"
             ></span>
           </template>
 
               <v-card>
-                <v-card-title class="white--text headline green lighten-0">{{ task.title }}</v-card-title>
+                <v-card-title class="white--text headline green lighten-0">{{ post.title }}</v-card-title>
                 <v-img
                     height="200px"
-                    src="https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    :src="'http://localhost:3000/' + post.photo"
                 >
                 </v-img>
                 <div class="text-left pa-4">
                   <h3>Notes</h3>
-                  <div class="font-weight-light" >{{ task.notes }}</div>
+                  <div class="font-weight-light" >{{ post.notes }}</div>
                   <v-divider class="mt-2 mb-2 mx-4"></v-divider>
                   <h3>Today's Task</h3>
-                  <v-list-item-subtitle>Application: {{ task.task }}</v-list-item-subtitle>
-                  <v-list-item-subtitle v-if="task.product">Product: {{ task.product }}</v-list-item-subtitle>
-                  <v-list-item-subtitle v-if="task.amount">Application Rate: {{ task.amount }} {{ task.units }} - Per 1,000 SqFt</v-list-item-subtitle>
-                  <v-list-item-subtitle v-if="task.mowHeight" >Mow Height: {{ task.mowHeight }} {{ task.units }}</v-list-item-subtitle>
+                  <v-list-item-subtitle>Application: {{ post.task }}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-if="post.product">Product: {{ post.product }}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-if="post.amount">Application Rate: {{ post.amount }} {{ post.units }} - Per 1,000 SqFt</v-list-item-subtitle>
+                  <v-list-item-subtitle v-if="post.mowHeight" >Mow Height: {{ post.mowHeight }} {{ post.units }}</v-list-item-subtitle>
                   <v-list-item-subtitle>Zones Effected:</v-list-item-subtitle>
                     <v-chip-group
                         active-class="accent-4 white--text"
                     >
-                      <v-chip v-for="zone in task.zone" :key="zone">{{ zone }}</v-chip>
+                      <v-chip v-for="zone in post.zone" :key="zone">{{ zone }}</v-chip>
                     </v-chip-group>
                 </div>
               </v-card>
@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     ...mapState({
-      allTasks: 'collection'
+      allPots: 'collection'
     })
   }
 }

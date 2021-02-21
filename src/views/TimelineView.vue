@@ -18,6 +18,9 @@ export default {
   name: 'TimelineView',
   components: {
     Timeline
+  },
+  mounted() {
+    this.$store.dispatch('getAllPosts')
   }
 }
 </script>

@@ -20,7 +20,7 @@ app.use(expressCspHeader({
     'img-src': ['static', 'localhost:3000']
   }
 }));
-app.use(express.static('static'))
+app.use('/static/', express.static('static'))
 app.use(urlencoded({extended: false}))
 app.use(json())
 app.use(cors())

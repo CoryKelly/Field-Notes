@@ -9,7 +9,7 @@
         </v-img>
       </v-col>
       <v-col cols="8">
-        <form>
+        <form enctype="multipart/form-data">
           <v-row>
             <v-col cols="6">
               <!-- TASK TITLE -->
@@ -201,6 +201,7 @@ min-height: 42px!important;
 <script>
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
+import { mapActions } from 'vuex'
 export default {
   name: 'UserForm',
   mixins: [validationMixin],
@@ -256,20 +257,22 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['addPost']),
     submit () {
       this.$v.$touch()
-      this.$store.commit('SET_TASKS', {
-        title: this.title,
-        notes: this.notes,
-        task: this.selectedTask,
-        product: this.selectedProduct,
-        amount: this.selectedAmount,
-        units: this.selectedUnits,
-        zone: this.selectedZone,
-        mowHeight: this.selectedMowHeight,
-        date: this.date,
-        photo: this.selectedPhoto
-      });
+      const data = new FormData()
+      data.append('title', this.title)
+      data.append('notes', this.notes)
+      data.append('task', this.task)
+      data.append('product', this.product)
+      data.append('amount', this.amount)
+      data.append('units', this.selectedUnits)
+      data.append('zone', this.zone)
+      data.append('mowHeight', this.selectedMowHeight)
+      data.append('date', this.date)
+      data.append('photo', this.selectedPhoto)
+
+      this.addPost(data)
       this.clear()
     },
     capturedImage(file) {

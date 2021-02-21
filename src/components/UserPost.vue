@@ -1,7 +1,7 @@
 <template>
       <v-timeline :dense="$vuetify.breakpoint.smAndDown">
         <v-timeline-item
-            v-for="post in allPots"
+            v-for="post in allPost"
             :key="post._id"
             color="green"
             :icon="post.icon"
@@ -30,14 +30,11 @@
                   <v-list-item-subtitle v-if="post.amount">Application Rate: {{ post.amount }} {{ post.units }} - Per 1,000 SqFt</v-list-item-subtitle>
                   <v-list-item-subtitle v-if="post.mowHeight" >Mow Height: {{ post.mowHeight }} {{ post.units }}</v-list-item-subtitle>
                   <v-list-item-subtitle>Zones Effected:</v-list-item-subtitle>
-                    <v-chip-group
-                        active-class="accent-4 white--text"
-                    >
-                      <v-chip v-for="zone in post.zone" :key="zone">{{ zone }}</v-chip>
+                    <v-chip-group active-class="accent-4 white--text">
+                      <v-chip v-for="zone in post.zone[0].split(',')" :key="zone">{{ zone }}</v-chip>
                     </v-chip-group>
                 </div>
               </v-card>
-
         </v-timeline-item>
       </v-timeline>
 </template>
@@ -64,7 +61,7 @@ export default {
   },
   computed: {
     ...mapState({
-      allPots: 'collection'
+      allPost: 'collection'
     })
   }
 }

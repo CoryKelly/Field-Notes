@@ -4,7 +4,7 @@
           <v-card class="mx-auto pa-4 rounded" flat>
             <v-row justify="center">
               <v-col lg="6" md="9" sm="12">
-                <UserTask/>
+                <UserPost/>
               </v-col>
             </v-row>
           </v-card>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import UserTask from "@/components/UserTask";
+import UserPost from "@/components/UserPost";
   export default {
     name: 'Timeline',
-    components: { UserTask }
+    components: { UserPost }
   }
 </script>

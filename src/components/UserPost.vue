@@ -28,7 +28,7 @@
                   <v-list-item-subtitle>Application: {{ post.task }}</v-list-item-subtitle>
                   <v-list-item-subtitle v-if="post.product">Product: {{ post.product }}</v-list-item-subtitle>
                   <v-list-item-subtitle v-if="post.amount">Application Rate: {{ post.amount }} {{ post.units }} - Per 1,000 SqFt</v-list-item-subtitle>
-                  <v-list-item-subtitle v-if="post.mowHeight" >Mow Height: {{ post.mowHeight }} {{ post.units }}</v-list-item-subtitle>
+                  <v-list-item-subtitle v-if="post.mowHeight || post.units" >Mow Height: {{ post.mowHeight }} {{ post.units }}</v-list-item-subtitle>
                   <v-list-item-subtitle>Zones Effected:</v-list-item-subtitle>
                     <v-chip-group active-class="accent-4 white--text">
                       <v-chip v-for="zone in post.zone[0].split(',')" :key="zone">{{ zone }}</v-chip>

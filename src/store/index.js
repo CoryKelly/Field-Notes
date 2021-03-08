@@ -18,12 +18,12 @@ export default new Vuex.Store({
   },
   actions: {
     async getAllPosts({ commit }) {
-      await axios.get('https://filed-notes-app.herokuapp.com/posts').then(response => {
+      await axios.get('http://localhost:3000/posts').then(response => {
         commit('SET_POSTS', response.data.post)
       })
     },
     async addPost({ commit }, newPost) {
-      await axios.post('https://filed-notes-app.herokuapp.com/posts/createPost', newPost, {
+      await axios.post('http://localhost:3000/posts/createPost', newPost, {
         headers: {
           "Content-Type": "multipart/form-data"
         }

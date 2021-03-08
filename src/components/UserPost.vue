@@ -17,7 +17,7 @@
                 <v-card-title class="white--text headline green lighten-0">{{ post.title }}</v-card-title>
                 <v-img
                     height="200px"
-                    :src="'https://filed-notes-app.herokuapp.com/' + post.photo"
+                    :src="'http://localhost:3000/' + post.photo"
                 >
                 </v-img>
                 <div class="text-left pa-4">

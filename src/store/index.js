@@ -14,6 +14,9 @@ export default new Vuex.Store({
     },
     NEW_POSTS: (state, posts) => {
       state.collection.unshift(posts)
+    },
+    DELETE_POSTS: (state, posts) => {
+      state.collection = posts
     }
   },
   actions: {
@@ -29,6 +32,11 @@ export default new Vuex.Store({
         }
       }).then((response) => {
         commit('NEW_POSTS', response.data)
+      })
+    },
+    async deletePost(_, postId) {
+      await axios.delete(`https://filed-notes-app-backend.herokuapp.com/posts/${postId}`).then((response) => {
+          console.log(response.data)
       })
     }
   },

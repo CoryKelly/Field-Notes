@@ -274,6 +274,7 @@ export default {
 
       this.addPost(data)
       this.clear()
+      this.$router.push({path: '/posts'})
     },
     capturedImage(file) {
       this.selectedPhoto = file

@@ -16,11 +16,13 @@
 
         <v-card>
           <v-card-title class="white--text headline green lighten-0">{{ post.title }}</v-card-title>
-          <v-img
-              height="200px"
-              :src="'https://filed-notes-app-backend.herokuapp.com/' + post.photo"
-          >
-          </v-img>
+          <router-link :to="'/posts/' + post._id">
+            <v-img
+                height="200px"
+                :src="'https://filed-notes-app-backend.herokuapp.com/' + post.photo"
+            >
+            </v-img>
+          </router-link>
           <div class="text-left pa-4">
             <h3>Notes</h3>
             <div class="font-weight-light">{{ post.notes }}</div>
@@ -31,10 +33,7 @@
             <v-list-item-subtitle v-if="post.amount">Application Rate: {{ post.amount }} {{ post.units }} - Per 1,000
               SqFt
             </v-list-item-subtitle>
-            <v-list-item-subtitle v-if="post.mowHeight || post.units">Mow Height: {{ post.mowHeight }} {{
-                post.units
-              }}
-            </v-list-item-subtitle>
+            <v-list-item-subtitle v-if="post.mowHeight">Mow Height: {{ post.mowHeight }} {{ post.units }}</v-list-item-subtitle>
             <v-list-item-subtitle>Zones Effected:</v-list-item-subtitle>
             <v-chip-group active-class="accent-4 white--text">
               <v-chip v-for="zone in post.zone[0].split(',')" :key="zone">{{ zone }}</v-chip>

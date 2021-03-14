@@ -17,6 +17,9 @@ export default new Vuex.Store({
     },
     DELETE_POSTS: (state, posts) => {
       state.collection = posts
+    },
+    NEW_SOIL_TEMP: (state, soilTemp) => {
+      state.collection.push(soilTemp)
     }
   },
   actions: {

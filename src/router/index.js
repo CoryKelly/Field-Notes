@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import CalculationsView from "@/views/CalculationsView";
 import TaskView from "@/views/TaskView";
 import TimelineView from "@/views/TimelineView";
+import postDetails from "@/views/Post";
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,10 @@ const routes = [
     path: '/posts/createPost',
     name: 'TaskView',
     component: TaskView
+  },
+  {
+    path: '/posts/:postId',
+    component: postDetails
   },
   {
     path: '/calculations',

@@ -2,14 +2,14 @@
   <v-app>
     <v-app-bar app color="white" flat>
       <div class="d-flex align-center">
-        <router-link style="display: inline-block;text-decoration: none; color: black" to="/posts">
+        <router-link style="display: inline-block;text-decoration: none; color: black" to="/task/all">
           <span class="font-weight-light title">Field</span>
           <span class="font-weight-bold title">Notes</span>
         </router-link>
       </div>
       <v-spacer></v-spacer>
 
-      <router-link to="/posts/createPost">
+      <router-link to="/task/create">
         <v-btn  target="_blank" text>
           <span class="mr-2">Create Task</span>
           <v-icon>mdi-border-color</v-icon>

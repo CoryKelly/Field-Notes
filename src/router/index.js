@@ -10,20 +10,20 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/posts'
+    redirect: '/task/all'
   },
   {
-    path: '/posts',
+    path: '/task/all',
     name: 'TimelineView',
     component: TimelineView
   },
   {
-    path: '/posts/createPost',
+    path: '/task/create',
     name: 'TaskView',
     component: TaskView
   },
   {
-    path: '/posts/:postId',
+    path: '/task/:postId',
     component: postDetails
   },
   {

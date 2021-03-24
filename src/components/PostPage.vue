@@ -30,7 +30,7 @@
             <v-col cols="6">
               <v-img
                   height="700px"
-                  :src="'https://filed-notes-app-backend.herokuapp.com/' + post.photo"
+                  :src="'https://field-notes-server.herokuapp.com/static/' + post.photo"
               ></v-img>
             </v-col>
           </v-row>
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async fetchPost() {
-      await axios.get('https://filed-notes-app-backend.herokuapp.com/posts/' + this.$route.params.postId)
+      await axios.get('https://field-notes-server.herokuapp.com/task/' + this.$route.params.postId)
           .then((response) => {
             this.Post = response.data
             console.log(this.Post)

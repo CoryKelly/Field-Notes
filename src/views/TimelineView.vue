@@ -20,7 +20,7 @@ export default {
     Timeline
   },
   mounted() {
-    this.$store.dispatch('getAllPosts')
+    this.$store.dispatch('getAllTasks')
   }
 }
 </script>

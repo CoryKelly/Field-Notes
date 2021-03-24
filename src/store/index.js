@@ -23,22 +23,22 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getAllPosts({ commit }) {
-      await axios.get('https://filed-notes-app-backend.herokuapp.com/posts').then(response => {
-        commit('SET_POSTS', response.data.post)
+    async getAllTasks({ commit }) {
+      await axios.get('https://field-notes-server.herokuapp.com/task/all').then(response => {
+        commit('SET_POSTS', response.data.allTasks)
       })
     },
-    async addPost({ commit }, newPost) {
-      await axios.post('https://filed-notes-app-backend.herokuapp.com/posts/createPost', newPost, {
+    async addTask({ commit }, newPost) {
+      await axios.post('https://field-notes-server.herokuapp.com/task/create', newPost, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       }).then((response) => {
-        commit('NEW_POSTS', response.data)
+        commit('NEW_POSTS', response.data.createTask)
       })
     },
-    async deletePost(_, postId) {
-      await axios.delete(`https://filed-notes-app-backend.herokuapp.com/posts/${postId}`).then((response) => {
+    async deleteTask(_, postId) {
+      await axios.delete(`https://field-notes-server.herokuapp.com/task/${postId}`).then((response) => {
           console.log(response.data)
       })
     }

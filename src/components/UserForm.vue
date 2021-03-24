@@ -257,7 +257,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['addPost']),
+    ...mapActions(['addTask']),
     submit () {
       this.$v.$touch()
       const data = new FormData()
@@ -272,9 +272,9 @@ export default {
       data.append('date', this.date)
       data.append('photo', this.selectedPhoto)
 
-      this.addPost(data)
+      this.addTask(data)
       this.clear()
-      this.$router.push({path: '/posts'})
+      this.$router.push({path: '/task/all'})
     },
     capturedImage(file) {
       this.selectedPhoto = file

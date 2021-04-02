@@ -22,7 +22,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 /.firebaserc
-/no/404.html
 /dist/css/app.6df88a77.css
 /dist/js/app.b816bc7a.js
 /dist/js/app.b816bc7a.js.map
@@ -35,3 +34,4 @@ pnpm-debug.log*
 /.github/workflows/firebase-hosting-pull-request.yml
 /.firebase/hosting.ZGlzdA.cache
 /dist/
+/no/

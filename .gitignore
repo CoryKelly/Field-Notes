@@ -21,3 +21,17 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+/.firebaserc
+/no/404.html
+/dist/css/app.6df88a77.css
+/dist/js/app.b816bc7a.js
+/dist/js/app.b816bc7a.js.map
+/dist/js/chunk-vendors.11dc14b5.js
+/dist/js/chunk-vendors.11dc14b5.js.map
+/dist/css/chunk-vendors.94dc6c65.css
+/dist/favicon.ico
+/firebase.json
+/.github/workflows/firebase-hosting-merge.yml
+/.github/workflows/firebase-hosting-pull-request.yml
+/.firebase/hosting.ZGlzdA.cache
+/dist/

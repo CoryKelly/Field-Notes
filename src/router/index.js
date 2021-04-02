@@ -4,6 +4,7 @@ import CalculationsView from "@/views/CalculationsView";
 import TaskView from "@/views/TaskView";
 import TimelineView from "@/views/TimelineView";
 import postDetails from "@/views/Post";
+import LawnPlanView from "@/views/LawnPlanView"
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/calculations',
     name: 'CalculationsView',
     component: CalculationsView
+  },
+  {
+    path: '/lawnplan',
+    name: 'LawnPlanView',
+    component: LawnPlanView
   },
 ]
 

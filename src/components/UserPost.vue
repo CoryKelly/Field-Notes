@@ -5,8 +5,14 @@
           v-for="task in allTask"
           :key="task._id"
           color="green"
-          :icon="task.icon"
+          large
       >
+        <template v-slot:icon>
+          <v-avatar style="width: 90px;">
+            <img src="../assets/lawn-icon.jpg">
+          </v-avatar>
+        </template>
+
         <template v-slot:opposite>
             <span
                 :class="`headline font-weight-bold grey--text`"

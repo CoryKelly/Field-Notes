@@ -36,6 +36,14 @@
         </v-btn>
       </router-link>
 
+
+      <router-link to="/lawnplan">
+        <v-btn  target="_blank" text>
+          <span class="mr-2">Lawn Plans</span>
+          <v-icon>mdi-calendar-text</v-icon>
+        </v-btn>
+      </router-link>
+
       <span style="font-weight: 500;" class="mr-1 bold pl-2">Today's 24Hr Avg</span><v-icon>mdi-thermometer</v-icon>
       <v-chip-group  v-for="soil in dailySoilTemp" :key="soil._id" active-class="accent-4 white--text">
         <v-chip v-for="temp in soil" :key="temp._id"> <b>{{ temp.soil_temp_0to10cm.value }}{{ temp.soil_temp_0to10cm.unit }}°</b></v-chip>

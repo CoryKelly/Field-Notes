@@ -95,7 +95,7 @@ export default {
               coverage: '1,000 sq ft'
             },
             {
-              id: 4,
+              id: 5,
               title: "RGS - Root Growth Stimulant",
               rate: '3 oz',
               coverage: '1,000 sq ft'
@@ -108,7 +108,7 @@ export default {
           width: 190,
         },
         {
-          id: 1,
+          id: 2,
           title: 'Round 2: When soil temps approach 65°F heading to 70°F',
           color: 'light-green',
           width: 600,
@@ -133,19 +133,19 @@ export default {
               coverage: '1,000 sq ft'
             },
             {
-              id: 5,
+              id: 4,
               title: "RGS - Root Growth Stimulant",
               rate: '3 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 6,
+              id: 5,
               title: "Air-8",
               rate: '9 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 7,
+              id: 6,
               title: "Fungicide - bullet proof strategy",
               rate: '3 lbs',
               coverage: '1,000 sq ft'
@@ -158,7 +158,7 @@ export default {
           width: 190,
         },
         {
-          id: 1,
+          id: 3,
           title: 'Round 3: 4-6 weeks after the previous fertilizer application',
           color: 'light-green',
           width: 600,
@@ -190,7 +190,7 @@ export default {
           width: 190,
         },
         {
-          id: 1,
+          id: 4,
           title: 'Round 4: 4-6 weeks after previous fertilizer application',
           color: 'light-green',
           width: 600,
@@ -203,13 +203,13 @@ export default {
               coverage: '1,000 sq ft'
             },
             {
-              id: 4,
+              id: 2,
               title: "Humic12",
               rate: '6 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 5,
+              id: 3,
               title: "RGS - Root Growth Stimulant",
               rate: '3 oz',
               coverage: '1,000 sq ft'
@@ -222,7 +222,7 @@ export default {
           width: 190,
         },
         {
-          id: 1,
+          id: 5,
           title: 'Round 5: As soil temps fall to 70°F',
           color: 'light-green',
           width: 600,
@@ -235,19 +235,19 @@ export default {
               coverage: '1,000 sq ft'
             },
             {
-              id: 4,
+              id: 2,
               title: "7-0-0 Greene Effect",
               rate: '6 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 5,
+              id: 3,
               title: "RGS - Root Growth Stimulant",
               rate: '9 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 6,
+              id: 4,
               title: "Air-8",
               rate: '3 oz',
               coverage: '1,000 sq ft'
@@ -260,7 +260,7 @@ export default {
           width: 190,
         },
         {
-          id: 1,
+          id: 6,
           title: 'Round 6: 4-5 weeks after previous application',
           color: 'light-green',
           width: 600,
@@ -273,25 +273,25 @@ export default {
               coverage: '1,000 sq ft'
             },
             {
-              id: 4,
+              id: 2,
               title: "7-0-0 Greene Effect",
               rate: '6 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 5,
+              id: 3,
               title: "RGS - Root Growth Stimulant",
               rate: '3 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 6,
+              id: 4,
               title: "Humic12",
               rate: '6 oz',
               coverage: '1,000 sq ft'
             },
             {
-              id: 6,
+              id: 5,
               title: "Prodiamine Pre-Emergent - for winter annuals",
               rate: '3 lbs',
               coverage: '1,000 sq ft'
